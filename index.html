@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            padding: 70px 0;
+        }
+
+        .footer-container{
+            border: 3px solid lightblue;
+            padding-bottom: 150px;
+        }
+
+        .section-calculator{
+    padding: 100px 0;
+    background:rgb(241, 212, 142, 0.3);
+}
+
+
+.calc-desc{
+    background-color: rgb(196, 222, 157 );
+    width: 500px;
+    height: 90px;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 25px;
+    min-width: 500px;
+    display: flex;
+    justify-self: center;
+}
+
+.calc-wraper{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.calc-btn{
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    border-radius: 24px;
+    border: none;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+}
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section class="section-select">
+            <div class="container">
+                <select name="" id="select" class="select">
+                    <option value="Кава" class="select-option" id="select-option">Кава</option>
+                    <option value="Чай" class="select-option" id="select-option">Чай</option>
+                    <option value="Компот" class="select-option" id="select-option">Компот</option>
+                </select>
+            </div>
+        </section>
+        <section class="section-calendar">
+            <div class="container">
+                <h1>Вибери дату:</h1>
+                <input type="text" id="datepicker">
+            </div>
+        </section>
+        <section class="section-color">
+            <div class="container">
+                <h2>Введіть колір</h2>
+                <input type="text" id="color-input">
+                <button id="color-btn">Enter</button>
+            </div>
+        </section>
+        <section class="section-calculator" id="calcualtor">
+            <div class="container">
+                <div class="calc-wraper">
+                    <p class="calc-desc" id="calc-desc"></p>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-first" id="calc-btn-first">1</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-sec" id="calc-btn-sec">2</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-third" id="calc-btn-third">3</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-plus" id="calc-btn-plus">+</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-fourth" id="calc-btn-fourth">4</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-fifth" id="calc-btn-fifth">5</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-sixth" id="calc-btn-sixth">6</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-minus" id="calc-btn-minus">-</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-seventh" id="calc-btn-seventh">7</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-eighth" id="calc-btn-eighth">8</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-nineth" id="calc-btn-nineth">9</button>
+                    <button style="background: linear-gradient(222deg, rgba(235,133,115,1) 0%, rgba(241,212,142,1) 100%) ;" class="calc-btn calc-btn-multyply" id="calc-btn-multyply">*</button>
+                    <button style="background: rgb(127, 217, 194);" class="calc-btn calc-btn-round" id="calc-btn-round">Round</button>
+                    <button style="background: linear-gradient(222deg, rgba(196,222,158,1) 0%, rgba(241,212,142,1) 100%);" class="calc-btn calc-btn-enter" id="calc-btn-enter">Enter</button>
+                    <button style="background: rgb(235, 133, 115);" class="calc-btn calc-btn-diving" id="calc-btn-diving">/</button>
+                    <button style="background: linear-gradient(222deg, rgba(196,222,158,1) 0%, rgba(127,217,194,1) 100%);" class="calc-btn calc-btn-decrimal" id="calc-btn-decrimal">decimal</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-sqr" id="calc-btn-sqr">√</button>
+                    <button style="background: rgb(127, 217, 194);" class="calc-btn calc-btn-C" id="calc-btn-C">C</button>
+                    <button style="background: rgb(194, 164, 205);" class="calc-btn calc-btn-string" id="calc-btn-string">To string</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <p class="" id="p"></p>
+                <p id="psec"></p>
+                <p id="pthird"></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+    let picker = new Pikaday({
+      field: document.getElementById('datepicker'),
+      format: 'D MMM YYYY',
+      firstDay: 1, 
+      i18n: {
+        previousMonth: 'Попередній місяць',
+        nextMonth: 'Наступний місяць',
+        months: ['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],
+        weekdays: ['Неділя','Понеділок','Вівторок','Середа','Четвер','П’ятниця','Субота'],
+        weekdaysShort: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб']
+      },
+      onSelect: function(date) {
+        let dayOfWeek = date.getDay(); 
+        let mounth = date.getMonth();
+        let year = date.getFullYear();
+        let p = document.getElementById('p');
+        let pSec = document.getElementById('psec');
+        let pThird = document.getElementById('pthird');
+        
+        if (dayOfWeek >= 1  && dayOfWeek <= 5) { 
+          p.textContent = "Це робочий день.";
+        } else {
+          p.textContent = "Це вихідний.";
+        }
+
+        if (mounth >= 2 && mounth <= 4) {
+                pSec.textContent = "Весна";
+            } else if (mounth >= 5 && mounth <= 7) { 
+                pSec.textContent = "Літо";
+            } else if (mounth >= 8 && mounth <= 10) {
+                pSec.textContent = "Осінь";
+            } else { 
+                pSec.textContent = "Зима";
+            }
+        let daysInMonth = new Date(year, mounth + 1, 0).getDate();
+        pThird.textContent =  daysInMonth +"день";
+      }
+    });
+    </script>
+</body>
+</html>
